@@ -78,7 +78,9 @@ Caused by: java.lang.IllegalArgumentException: Comparison method violates its ge
         at org.eclipse.equinox.internal.p2.artifact.repository.MirrorSelector.hasValidMirror(MirrorSelector.java:317)
 </pre>
 
+### CI - Jenkins
 
+An example can be found on [https://hypery2k.ci.cloudbees.com/job/Xtext%20Maven%20Sample/] (Cloudbees)
 ### OSGi issues
 
 The generated project from XText 2.2.1 has a number of bundle imports that need to be made available via OSGi.  By far the easiest method
