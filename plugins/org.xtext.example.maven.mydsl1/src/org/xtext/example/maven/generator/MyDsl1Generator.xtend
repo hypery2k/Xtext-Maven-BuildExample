@@ -10,6 +10,6 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 class MyDsl1Generator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		//TODO implement me
+		val test = new String
 	}
 }

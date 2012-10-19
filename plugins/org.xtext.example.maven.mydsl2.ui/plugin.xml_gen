@@ -6,42 +6,42 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="mydsl1"
-            id="org.xtext.example.maven.MyDsl1"
-            name="MyDsl1 Editor">
+            extensions="mydsl2"
+            id="org.xtext.example.maven.MyDsl2"
+            name="MyDsl2 Editor">
         </editor>
     </extension>
     <extension
         point="org.eclipse.ui.handlers">
         <handler
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="org.xtext.example.maven.MyDsl1.Editor.opened">
+                    definitionId="org.xtext.example.maven.MyDsl2.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="org.xtext.example.maven.MyDsl1.validate">
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="org.xtext.example.maven.MyDsl2.validate">
          <activeWhen>
             <reference
-                    definitionId="org.xtext.example.maven.MyDsl1.Editor.opened">
+                    definitionId="org.xtext.example.maven.MyDsl2.Editor.opened">
             </reference>
          </activeWhen>
       </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="org.xtext.example.maven.MyDsl1.Editor.opened">
+        <definition id="org.xtext.example.maven.MyDsl2.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="org.xtext.example.maven.MyDsl1" 
+                        value="org.xtext.example.maven.MyDsl2" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -50,33 +50,33 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.xtext.example.maven.MyDsl1"
-            name="MyDsl1">
-            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl1"/>
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.xtext.example.maven.MyDsl2"
+            name="MyDsl2">
+            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl2"/>
         </page>
         <page
-            category="org.xtext.example.maven.MyDsl1"
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="org.xtext.example.maven.MyDsl1.coloring"
+            category="org.xtext.example.maven.MyDsl2"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="org.xtext.example.maven.MyDsl2.coloring"
             name="Syntax Coloring">
-            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl1"/>
+            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl2"/>
         </page>
         <page
-            category="org.xtext.example.maven.MyDsl1"
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="org.xtext.example.maven.MyDsl1.templates"
+            category="org.xtext.example.maven.MyDsl2"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="org.xtext.example.maven.MyDsl2.templates"
             name="Templates">
-            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl1"/>
+            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl2"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="org.xtext.example.maven.MyDsl1"
-            name="MyDsl1">
-            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl1"/>
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.xtext.example.maven.MyDsl2"
+            name="MyDsl2">
+            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl2"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -86,14 +86,14 @@
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="org.xtext.example.maven.ui.keyword_MyDsl1"
-            label="MyDsl1"/>
+            id="org.xtext.example.maven.ui.keyword_MyDsl2"
+            label="MyDsl2"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="org.xtext.example.maven.MyDsl1.validate"
+            id="org.xtext.example.maven.MyDsl2.validate"
             name="Validate">
       </command>
     </extension>
@@ -101,12 +101,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="org.xtext.example.maven.MyDsl1.validate"
+                 commandId="org.xtext.example.maven.MyDsl2.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="org.xtext.example.maven.MyDsl1.Editor.opened">
+                    definitionId="org.xtext.example.maven.MyDsl2.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -116,7 +116,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="org.xtext.example.maven.MyDsl1.Editor.opened">
+                	<reference definitionId="org.xtext.example.maven.MyDsl2.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -124,11 +124,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 	    <handler
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="org.xtext.example.maven.MyDsl1.Editor.opened">
+                    definitionId="org.xtext.example.maven.MyDsl2.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -139,14 +139,14 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="mydsl1">
+			class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="mydsl2">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="mydsl1">
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="mydsl2">
         </resourceServiceProvider>
     </extension>
 
@@ -155,27 +155,27 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
       </participant>
    </extension>
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            category="org.xtext.example.maven.MyDsl1"
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="org.xtext.example.maven.MyDsl1.compiler.preferencePage"
+            category="org.xtext.example.maven.MyDsl2"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.xtext.example.maven.MyDsl2.compiler.preferencePage"
             name="Compiler">
-            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl1"/>
+            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl2"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            category="org.xtext.example.maven.MyDsl1"
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="org.xtext.example.maven.MyDsl1.compiler.propertyPage"
+            category="org.xtext.example.maven.MyDsl2"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.xtext.example.maven.MyDsl2.compiler.propertyPage"
             name="Compiler">
-            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl1"/>
+            <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl2"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -187,11 +187,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="org.xtext.example.maven.MyDsl1.Editor.opened">
+					definitionId="org.xtext.example.maven.MyDsl2.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -211,7 +211,7 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.xtext.example.maven.MyDsl1.Editor.opened"/>
+					<reference definitionId="org.xtext.example.maven.MyDsl2.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -220,17 +220,17 @@
    <extension
          point="org.eclipse.ui.ide.markerResolution">
       <markerResolutionGenerator
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
    </extension>
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="org.xtext.example.maven.MyDsl1.Editor.opened">
+					definitionId="org.xtext.example.maven.MyDsl2.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -242,7 +242,7 @@
                style="push">
             <visibleWhen checkEnabled="false">
                <reference
-                     definitionId="org.xtext.example.maven.MyDsl1.Editor.opened">
+                     definitionId="org.xtext.example.maven.MyDsl2.Editor.opened">
                </reference>
             </visibleWhen>
          </command>
@@ -250,30 +250,30 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="org.xtext.example.maven.MyDsl1"
-	        class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="org.xtext.example.maven.MyDsl1.refactoring"
+	        category="org.xtext.example.maven.MyDsl2"
+	        class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="org.xtext.example.maven.MyDsl2.refactoring"
 	        name="Refactoring">
-	        <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl1"/>
+	        <keywordReference id="org.xtext.example.maven.ui.keyword_MyDsl2"/>
 	    </page>
 	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="org.xtext.example.maven.MyDsl1.compare.contentViewers"
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="mydsl1">
+    <viewer id="org.xtext.example.maven.MyDsl2.compare.contentViewers"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="mydsl2">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="org.xtext.example.maven.MyDsl1.compare.contentMergeViewers"
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="mydsl1" label="MyDsl1 Compare">
+    <viewer id="org.xtext.example.maven.MyDsl2.compare.contentMergeViewers"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="mydsl2" label="MyDsl2 Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="org.xtext.example.maven.MyDsl1.editors.documentProviders"
-            class="org.xtext.example.maven.ui.MyDsl1ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="mydsl1">
+    <provider id="org.xtext.example.maven.MyDsl2.editors.documentProviders"
+            class="org.xtext.example.maven.ui.MyDsl2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="mydsl2">
     </provider>
   </extension>
 
