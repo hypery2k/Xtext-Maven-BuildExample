@@ -49,6 +49,11 @@
 		<module>../../plugins/org.xtext.example.maven.mydsl2</module>
 		<module>../../plugins/org.xtext.example.maven.mydsl2.ui</module>
 		<module>../../tests/org.xtext.example.maven.mydsl2.tests</module>
+		<module>../../features/org.xtext.example.feature</module>
+		<!-- <module>../../features/org.xtext.example.mydsl.feature.source</module>
+		<module>../../features/org.xtext.example.mydsl.feature.sdk</module> -->
+		<module>../../releng/org.xtext.example.updatesite</module>
+		<module>../../releng/org.xtext.example.product</module>
 	</modules>
 
 	<build>

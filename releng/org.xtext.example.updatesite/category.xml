@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.xtext.example.feature_0.5.0.qualifier.jar" id="org.xtext.example.feature" version="0.5.0.qualifier">
+      <category name="org.xtext.example"/>
+   </feature>
+   <category-def name="org.xtext.example" label="Xtext Bizware TestBench"/>
+</site>

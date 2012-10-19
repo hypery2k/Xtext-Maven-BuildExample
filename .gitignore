@@ -22,4 +22,9 @@ plugins/org.xtext.example.maven.mydsl2/src-gen/*
 plugins/org.xtext.example.maven.mydsl2/xtend-gen/*
 releng/org.xtext.example.repository/target/*
 tests/org.xtext.example.maven.mydsl1.tests/src-gen/*
+tests/org.xtext.example.maven.mydsl1.tests/target/*
 tests/org.xtext.example.maven.mydsl2.tests/src-gen/*
+tests/org.xtext.example.maven.mydsl2.tests/target/*
+features/org.xtext.example.feature/target/*
+releng/org.xtext.example.product/target/*
+releng/org.xtext.example.updatesite/target/*
