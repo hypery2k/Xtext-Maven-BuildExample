@@ -1,9 +1,0 @@
-grammar org.xtext.example.maven.MyDsl1 with org.eclipse.xtext.common.Terminals
-
-generate myDsl1 "http://www.xtext.org/example/maven/MyDsl1"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
